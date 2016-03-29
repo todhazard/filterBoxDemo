@@ -1,0 +1,58 @@
+<!doctype html>
+
+<!-- ASSIGN ANGULAR MODULE -->
+<html ng-app="filterBoxDemo">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+    <title>FilterBox Demo</title>
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/filterbox.css"/>
+
+    <script src="node_modules/angular/angular.js"></script><!-- load angular -->
+    <script src="js/filterBox.module.js"></script>
+    <script src="js/filterBoxSvc.js"></script>
+    <script src="js/filterBoxCtrl.js"></script>
+</head>
+
+<!-- bind filterbox control -->
+<body ng-controller="filterBoxCtrl as vm">
+<div class="container">
+    <div class="row">
+        <div class="text-center">
+            <h3>A Custom Filtering Text box</h3>
+        <span class="text-muted">
+            <p>Todd Hazard - 2015-03-28</p>
+        </span>
+        </div>
+    </div>
+
+    <!-- INPUT FORM FOR FILTER -->
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2 ">
+            <form>
+                <!-- TEXT BOX FOR FRUIT SELECTION-->
+                <div class="form-group">
+
+                    <input type="text" class="form-control input-lg "
+                           placeholder="Enter a fruit - Apple, Orange, Banana..."
+                           id="filterText"
+                           ng-model="vm.filterText" ng-change="vm.updateFilter()">
+                </div>
+
+                <!-- LOOP AND RENDER FILTER MATCHES -->
+                <h4>Suggested fruit:</h4>
+                <ul>
+                    <li ng-repeat="match in vm.filterMatches">{{ match }}</li>
+                </ul>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
