@@ -3,18 +3,21 @@ A  simple custom filtering text box demo.
 
 
 ##How was it made?
-This client uses Angular.js and Bootstrap
+This client uses Angular.js, Bootstrap, and karma for testing
+
 
 ##Dependencies
-3rd party javascript and test tool install requires NPM/Node.js
+3rd party javascript are installed using npm.
 
-Install dependencies using NPM:
-npm install -g yo
-npm install -g bower
-npm install -g generator-jasmine
+To install client dependencies execute the following from the command line:
+
+npm install
 
 
 ##Testing
-Unit tests executed using Karma:
+Test tool install also requires NPM and that certain karma packages be installed globally
 
+Install dependencies:
+
+Run karma:
 karma start karma.conf.js
